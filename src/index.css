@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* COMPONENT SIZE */
+  --header-height: 2.75rem;
+  --footer-height: 2.25rem;
+  --main-height: calc(100svh - var(--header-height) - var(--footer-height));
+
+  /* LIGHT MODE */
+  --lm-text-primary: 0 0 0 ;
+  --lm-bg-primary: 225 225 225;
+  --lm-bg-secondary: 247 248 250;
+
+  /* DARK MODE */
+  --dm-text-primary: 255 255 255;
+  --dm-bg-primary: 26 26 26;
+  --dm-bg-secondary: 40 40 40;
+
+  /* MAIN VARIABLE USED IN TAILWIND CONFIG */
+  --custom-text-primary: var(--lm-text-primary);
+  --custom-bg-primary: var(--lm-bg-primary);
+  --custom-bg-secondary: var(--lm-bg-secondary);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --custom-text-primary: var(--dm-text-primary);
+  --custom-bg-primary: var(--dm-bg-primary);
+  --custom-bg-secondary: var(--dm-bg-secondary);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --custom-text-primary: var(--lm-text-primary);
+  --custom-bg-primary: var(--lm-bg-primary);
+  --custom-bg-secondary: var(--lm-bg-secondary);
+  color-scheme: light;
+}
